@@ -1,8 +1,4 @@
-TO-DO
-
-Plantillas y recursos necesarios para el proyecto de Desarrollo Web en Entorno Cliente 2024-2025
-
-
+# Proyecto de Desarrollo Web en Entorno Cliente 2024-2025
 
 ## Fase I
 
@@ -71,4 +67,4 @@ Puedes crear nuevos juegos modificando el contenido de `./lib/game.js`. Ten en c
 funcionar con cualquier conjunto de casillas —no sólo con las que hay de ejemplo— siempre y cuando quepan en la
 rejilla.
 
-En la web https://crosswordlabs.com/ puedes generar nuevos puzzles si lo necesitas. 
+En la web https://crosswordlabs.com/ puedes generar nuevos puzzles si lo necesitas.
