@@ -31,7 +31,7 @@ const GAME_2 = {
   letters: 'abria',
   words: new Map([
     ['bar',    { origin: [1, 4], direction: 'vertical' } ],
-    ['abria', { origin: [2, 0], direction: 'vertical' } ],
+    ['abria', { origin: [0, 0], direction: 'vertical' } ],
     ['iba',    { origin: [3, 4], direction: 'vertical' } ],
     ['abri',   { origin: [0, 4], direction: 'horizontal' } ],
     ['ria',    { origin: [1, 6], direction: 'horizontal' } ]
