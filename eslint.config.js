@@ -9,7 +9,7 @@ export default [
       html: htmlPlugin,
     },
     files: ["**/*.html", "**/*.js"],
-    ignores: ["**/dist/*"],
+    ignores: ["**/dist/**"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",

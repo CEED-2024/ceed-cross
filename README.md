@@ -1,6 +1,8 @@
 # Proyecto de Desarrollo Web en Entorno Cliente 2024-2025
 
-## Fase I
+[Ejemplo del resultado final del proyecto](https://ceed-cross.netlify.app)
+
+## Fase I - Entregable no evaluable
 
 En esta fase tendrás que hacer que se muestren las casillas del juego. La aplicación deberá ser un proyecto
 Vite con al menos los scripts por defecto (dev, build y preview) aunque es recomendable añadir uno más para
@@ -15,6 +17,12 @@ de los proporcionados, lo único que variará son las letras generadas dentro de
 
 Debe utilizar las mismas clases en los elementos, y no puedes añadir estilos o clases adicionales.
 Se puede añadir un id a los elementos si lo necesitas.
+
+Puedes añadir un script en la página para incluir tu código.
+
+### Fondo
+
+El fondo de la aplicación está en la carpeta resources. Debes incluirlo en tu proyecto en la carpeta adecuada.
 
 ### Iconos
 
@@ -68,3 +76,70 @@ funcionar con cualquier conjunto de casillas —no sólo con las que hay de ejem
 rejilla.
 
 En la web https://crosswordlabs.com/ puedes generar nuevos puzzles si lo necesitas.
+
+## Fase II - No entregable
+
+En esta fase debes hacer que funcione la rueda para seleccionar las palabras. Para ello deberás crear las letras dentro
+de la rueda y programar el funcionamiento de las líneas que unen las letras
+
+### Creación de las letras
+
+Las letras del juego se deben obtener del objeto game, con la propiedad `letters`.
+
+- Se crearán las letras dentro del elemento `#wheel`
+- Las letras serán un elemento `div` con la clase `.wheel-letter`
+- Tendrán como contenido la letra correspondiente
+
+#### Posicionamiento de las letras
+
+Para colocar las letras en su posición debes cambiar el `left` y `top` de cada una. Para obtener la posición a asignar
+utiliza la función calculateLetterPositions de la libreria `./lib/letter_positions.js`. Dicha función
+requiere el número de letras a situar en el círculo y devolverá un array de objetos con las propiedades `left` y `top`
+que indicarán la posición de cada letra. Por ejemplo:
+
+```js
+console.log(calculateLetterPositions(2))
+
+[
+  { left: '50%', top: '20%' },
+  { left: '49.99999999999999%', top: '80%' }
+]
+```
+
+Debes asignar estas posiciones a cada una de las letras.
+
+### Programación de las líneas
+
+Consulta el [ejemplo de funcionamiento](https://ceed-cross.netlify.app) para entender mejor cómo tienen que funcionar
+las líneas.
+
+
+- Al pulsar el botón izquierdo del ratón sobre una letra:
+  - Se aplicará la clase `selected` a la letra
+  - Se creará un `div` con la clase `line` que tendrá como origen el centro de la letra y terminará en la posición del ratón
+- Cuando se mueva el ratón la línea se actualizará para que termine en la posición actual del ratón
+- Si el ratón pasa por encima de otra letra por la que no hubiera pasado antes:
+  - Se fijará la línea para que una el centro de la letra actual con el centro de la nueva letra
+  - Se creará una nueva línea que una el centro de la nueva letra con la posición actual del ratón
+  - Se creará aplicará la clase `selected` a la nueva letra
+- Cuando se suelte el botón izquierdo se borrarán todas las líneas y se eliminará la clase `selected` de las letras seleccionadas
+
+Para calcular el centro de una letra puedes utilizar la función `getElementCenter` de `./lib/line_position.js`. La función
+toma un elemento HTML y devuelve un objeto con las propiedades `x` e `y` que indican el centro del elemento.
+
+Para posicionar la línea debes asignarle la `x` e `y` del centro de la letra de origen (en pixels) a las propiedades `left` y `top`.
+Además, debes calcular la longitud y el ángulo de la línea. Para ello puedes utilizar la función `lengthAndAngle` de `./lib/line_position.js`.
+Dicha función toma dos arrays con las posiciones x e y como primer y segundo elemento y devuelve un objeto con las propiedades `length` y `angle`.
+Debes asignar la longitud a la propiedad `width` y a la propiedad `transform` de la línea el valor `rotate(${angle}deg)`.
+
+Por ejemplo:
+
+```js
+const origin = [10,20]
+const end = [30,40]
+
+const { length, angle } = lengthAndAngle(origin, end)
+// Asignar el valor de length a la propiedad width de la línea y el valor de angle a la propiedad transform
+```
+
+
