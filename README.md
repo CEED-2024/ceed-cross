@@ -8,7 +8,7 @@ Debes entregar el proyecto en GitHub Classroom. Para ello, incluye los ficheros 
 en la carpeta raíz de este repositorio y haz un push de los cambios cuando lo tengas listo.
 
 
-## Fase I - Entregable no evaluable
+## Fase I
 
 En esta fase tendrás que hacer que se muestren las casillas del juego. La aplicación deberá ser un proyecto
 Vite con al menos los scripts por defecto (dev, build y preview) aunque es recomendable añadir uno más para
@@ -83,7 +83,11 @@ rejilla.
 
 En la web https://crosswordlabs.com/ puedes generar nuevos puzzles si lo necesitas.
 
-## Fase II - No entregable
+
+
+
+
+## Fase II
 
 En esta fase debes hacer que funcione la rueda para seleccionar las palabras. Para ello deberás crear las letras dentro
 de la rueda y programar el funcionamiento de las líneas que unen las letras
