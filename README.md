@@ -2,6 +2,12 @@
 
 [Ejemplo del resultado final del proyecto](https://ceed-cross.netlify.app)
 
+## Entrega en GitHub Classroom
+
+Debes entregar el proyecto en GitHub Classroom. Para ello, incluye los ficheros de tu proyecto
+en la carpeta raíz de este repositorio y haz un push de los cambios cuando lo tengas listo.
+
+
 ## Fase I - Entregable no evaluable
 
 En esta fase tendrás que hacer que se muestren las casillas del juego. La aplicación deberá ser un proyecto
