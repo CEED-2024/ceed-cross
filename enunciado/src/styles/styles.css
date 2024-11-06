@@ -7,6 +7,10 @@
   --tool-hover-background: #cccccc;
 }
 
+.on-top {
+  z-index: 300 !important;
+}
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -40,7 +44,25 @@ body {
 
 #controls {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+#black {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7  ;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+}
+
+.hidden {
+  display: none;
 }
 
 /* ---------------------------------------------------------------- */
@@ -116,7 +138,14 @@ body {
   transform: translate(-50%, -50%);
 
   /* It needs to be on top of the lines */
-  z-index: 10;
+  z-index: 100;
+
+  /* Transition for shuffling letters */
+  transition: left 0.5s ease, top 0.5s ease;
+}
+
+.wheel-letter.on-top {
+  background-color: white;
 }
 
 .wheel-letter.selected {

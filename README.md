@@ -153,3 +153,18 @@ const { length, angle } = lengthAndAngle(origin, end)
 ```
 
 
+## Fase III
+
+Se han modificado los siguientes ficheros respecto a la fase anterior, descárgalos antes de empezar a trabajar:
+- `/lib/Game.js`
+- `/styles/styles.css`
+- Ha cambiado también el HTML, hay un nuevo `div` con el id `#black`
+
+En esta fase vas a hacer que las palabras seleccionadas se marquen en el tablero. Para ello debes utilizar la función
+`findWord` de la clase `Game`.
+
+La función `findWord` toma un string como parámetro y devuelve un `wordPosition` donde se encuentra la palabra. Ten en cuenta que la posición es de antes de haberlas centrado en el tablero. Debes modificar el contenido de los elementos letter correspondientes para mostrar la palabra seleccionada.
+
+Si la palabra no está en el juego lanzará una excepción de la clase `WordNotFound`. En el caso de que la palabra no esté, simplemente no hagas nada.
+
+
