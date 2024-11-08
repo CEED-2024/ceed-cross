@@ -178,3 +178,25 @@ En esta fase tienes que implementar tres de las ayudas. Para ello debes programa
 menos de cinco letras por revelar, se revelarán todas las que queden.
 
 Para revelar letras debes utilizar la función `game.letterAt(x, y)` para obtener la letra en la posición x, y del tablero, donde x e y son las coordenadas de la letra <ins>antes de centrar</ins>.
+
+
+## Fase V
+
+El objetivo de esta fase es finalizar el juego programando la ayuda del martillo. Debe funcionar de la siguiente forma:
+
+- Al pulsar el martillo:
+  1) Quitar la clase `hidden` al div `#black`
+  2) Añadir la clase `.on-top` a todas las letras
+
+A partir de ese momento:
+
+- Si se pulsa en una letra:
+  1) Si la letra está vacía, se rellenará con la letra correcta y se finalizará la ayuda
+  2) Si la letra está ya rellenada no se hará nada, y se continuará con la selección
+
+- Si se pulsa en cualquier otro lugar:
+  1) Se finalizará la ayuda
+
+- Al finalizar la ayuda:
+  1) Quitar la clase `.on-top` a todas las letras
+  2) Añadir la clase hidden al `div` `#black`
