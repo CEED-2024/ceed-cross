@@ -168,3 +168,13 @@ La función `findWord` toma un string como parámetro y devuelve un `wordPositio
 Si la palabra no está en el juego lanzará una excepción de la clase `WordNotFound`. En el caso de que la palabra no esté, simplemente no hagas nada.
 
 
+## Fase IV
+
+En esta fase tienes que implementar tres de las ayudas. Para ello debes programar el funcionamiento de los botones de mezcla, bombilla y diana.
+
+- **Ayuda mezcla**: Al pulsar en el botón de mezcla se cambiarán de posición las letras de la rueda. ***Debes cambiar la posición, no crear nuevas letras***, para que se vea el efecto de mezcla definido en el CSS.
+- **Ayuda bombilla**: Al pulsar en la bombilla, se revelará una letra al azar en el tablero. Si todas las letras están reveladas no hará nada.
+- **Ayuda diana**: Al pulsar en la diana (el icono de abajo de la mezcla) se revelarán cinco letras al azar en el tablero. Si hay
+menos de cinco letras por revelar, se revelarán todas las que queden.
+
+Para revelar letras debes utilizar la función `game.letterAt(x, y)` para obtener la letra en la posición x, y del tablero, donde x e y son las coordenadas de la letra <ins>antes de centrar</ins>.
