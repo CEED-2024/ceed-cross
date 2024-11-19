@@ -1,8 +1,8 @@
 function getElementCenter(element) {
   const { left, top, width, height } = element.getBoundingClientRect()
   return {
-      x: left + width / 2,
-      y: top + height / 2
+      x: left + width / 2 + window.scrollX,
+      y: top + height / 2 + window.scrollY
   }
 }
 
